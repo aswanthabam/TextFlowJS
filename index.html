@@ -3,25 +3,91 @@
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="" content="">
-        <title></title>
         
+        <link rel="stylesheet" href="./style.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+        <title>Text Flow JS</title>
+        <style>
+            body{
+                background: black;
+                color:white;
+            }a{
+                text-decoration: none;
+            }
+        </style>
     </head>
     <body>
        
-        <p id="texter" style="font-size:30px;" class="texter">Gellobs</p>
-        <p id="texter2" style="font-size:30px;" class="texter2">Hello </p>
+        <p class="texter">Hello everyone welcome to TextFlowJS by Aswanth V C. this is an example of the output of using TextFlowJS</p>
+        <br/>
+        Source Code 
+        <br/>
+        <pre><code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv="content-type" content="text/html; charset=utf-8" /&gt;
+        &lt;meta name="" content=""&gt;
+        &lt;!-- Default styles for TextFlowJS not recommended styles will be automatically loaded by JavaScript --&gt;
+        &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css"/&gt;
+        &lt;title&gt;Text Flow JS&lt;/title&gt;
+        &lt;style&gt;
+            body{
+                background: black;
+                color:white;
+            }a{
+                text-decoration: none;
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;!-- The element which want the effect --&gt;
+    &lt;!-- The class of the element is 'texter' you can change it by JavaScript --&gt;
+    &lt;p id="texter" style="font-size:30px;" class="texter"&gt;Hello everyone welcome to TextFlowJS by Aswanth V C. this is an example of the output of using TextFlowJS&lt;/p&gt;
+        &lt;br/&gt;
+        &lt;a href="https://github.com/aswanthabam/TextFlowJS/"&gt;View More In GitHub&lt;/a&gt;
+        &lt;br/&gt;
+        &lt;a href="https://github.com/aswanthabam/TextFlowJS/"&gt;View Documentation&lt;/a&gt;
+          &lt;script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8"&gt;
+        &lt;/script&gt;
+        &lt;script&gt;
+            texter2 = document.getElementById("texter2");
+            console.log(texter2);
+            this.wrapTextSize = 20;
+            this.wrapTextColor = "#aed7d6";
+            this.blinkFrequency = 500;
+            this.CursorBackgroundColor = "#f6f6f7";
+            setWrap();
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+        <br/>
+        <a href="https://github.com/aswanthabam/TextFlowJS/">View More In GitHub</a>
+        <br/>
+        <a href="https://github.com/aswanthabam/TextFlowJS/">View Documentation</a>
         
-         <script src="./textWrap.js" type="text/javascript" charset="utf-8">
+         <script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
         </script>
+        
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script>hljs.highlightAll();</script>
         <script>
         texter2 = document.getElementById("texter2");
         console.log(texter2);
-        this.breakKey = "e";
-        setWrap("Hello everyone welcome to abam tech");
-        if(m.finished){
-            k = new setWrap(null,texter2);
-        }
-        
+        this.wrapTextSize = 20;
+        this.wrapTextColor = "#aed7d6";
+        this.blinkFrequency = 500;
+        this.CursorBackgroundColor = "#f6f6f7";
+        setWrap();
         </script>
     </body>
 </html>
+
+
+       
+        
+        
+       

@@ -13,7 +13,7 @@ this.textContainer.id = "abamtextContainer1";
 var link = document.createElement('link');
 link.rel = 'stylesheet';  
 link.type = 'text/css'; 
-link.href = 'https://abam.herokuapp.com/usescript/TextWrapStyles.css/';
+link.href = 'https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css';
 document.getElementsByTagName('HEAD')[0].appendChild(link);
 // Declaring loopable and content variables
 this.content;
@@ -24,7 +24,7 @@ this.finished = false;
 // Some variables which store the styling details about the code these can be changed from outside of the code to customize
 this.cursorHeight = null;
 this.blinkFrequency = 200;
-this.dir = "rtl";
+this.dir = "";
 this.minSpeed = 50;
 this.maxSpeed = 100;
 this.breakPoint = null;
