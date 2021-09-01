@@ -6,16 +6,16 @@ Text flow js is a script to make text appear as Typing. You can view a simple ex
 Here is the instructions for the Usage
 
 ### Using JSDelivr
-Use the TextFlowJS script. Using Stylesheet is not mandatory. Stylesheet will be loaded by javascript. Only use if the default styles are not working.
+Use the TextFlowJS script from . Using Stylesheet is not mandatory because Stylesheet will be loaded by javascript. Only use Stylesheet if the default styles are not working.
 
 ```html
 <!-- Stylesheet for TextFlowJS Not recommended this will be automatically loaded by javascript -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css">
 <!-- Script for TextFlowJS -->
 <script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
 </script>
 ```
-Then use ```setWrap()``` in your script. You can give the text and elem as arguments if needed. By default the text and elem will be taken from the element with "texter" class name. You can customize this class in your java script.
+Then use ```setWrap()``` in your script. You can give the text and elements as arguments if needed. By default the text and elem will be taken from the element with "texter" class name. You can customize this class in your java script.
 ```html
 <script>
     setWrap(text = null,elem = null); // start text flow
@@ -31,12 +31,12 @@ this.wrapTextColor = "#000000";
 this.wrapFontFamily = "Monospace";
 this.wrapTextSize = 20; // 20 px
 ```
-Change speed of the TextFlow by the minSpeed and maxSpeed the speed will be randomly obtained within the range.
+Change speed of the TextFlow by using ```this.minSpeed``` and ```this.maxSpeed```. the speed will be randomly obtained within the range.
 ```js
 this.minSpeed = 50; // In milliseconds
 this.maxSpeed = 100; // In milliseconds
 ```
-Change cursor background color, width, height etc. Default value of height is the height of the text.
+Change cursor background color, width, height etc. Default value of height is the height of the text(i.e font size).
 ```js
 this.cursorHeight = 6; // 6 px (not recommended to set)
 this.CursorBackgroundColor = "#000000";
@@ -46,11 +46,11 @@ Change the default class name
 ```js
 this.setClassName = "texter2";
 ```
-Change direction of the text by ```this.dir```
+Change direction of the text by ```this.dir```.
 ```js
 this.dir = "rtl"; // direction from rigth to left
 ```
-Change cursor blinking frequency by ```this.blinkFrequency```(in milliseconds)
+Change cursor blinking frequency by ```this.blinkFrequency```.(in milliseconds)
 ```js
 this.blinkFrequency = 200; //In milliseconds
 ```
