@@ -15,8 +15,15 @@ Use the TextFlowJS script. Using Stylesheet is not mandatory. Stylesheet will be
 <script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
 </script>
 ```
+Then use ```setWrap()``` in your script. You can give the text and elem as arguments if needed. By default the text and elem will be taken from the element with "texter" class name. You can customize this class in your java script.
+```html
+<script>
+    setWrap(text = null,elem = null); // start text flow
+</script>
+```
 
 ### Customizing
+All customisation want to be done before calling ```setWrap()```
 
 Change the text color, font size, font family etc.
 ```js
@@ -35,6 +42,10 @@ this.cursorHeight = 6; // 6 px (not recommended to set)
 this.CursorBackgroundColor = "#000000";
 this.cursorWidth = 5; // 5 px
 ```
+Change the default class name
+```js
+this.setClassName = "texter2";
+```
 Change direction of the text by ```this.dir```
 ```js
 this.dir = "rtl"; // direction from rigth to left
@@ -49,3 +60,7 @@ this.breakPoint = 5; // Specify string index where to break
 this.breakTime = 1000; // Time to break in milliseconds
 this.breakKey = "e"; // stop 1 second when 'e' is reached
 ```
+
+### Known Issues
+
+1) Cant use Text Flow for more than one element.
