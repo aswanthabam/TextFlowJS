@@ -1,7 +1,5 @@
 # TextFlowJS
-<iframe src="https://aswanthabam.github.io/TextFlowJS/" width="100%" height="130px" scrolling="no" border="0px">
 
-</iframe>
 Text flow js is a script to make text appear as Typing. You can view a simple example of this <a href="https://aswanthabam.github.io/TextFlowJS/">Here</a>
 
 ## Usage
@@ -63,11 +61,58 @@ this.breakTime = 1000; // Time to break in milliseconds
 this.breakKey = "e"; // stop 1 second when 'e' is reached
 ```
 
-### Example
+### Example Code
 
-<iframe src="https://aswanthabam.github.io/TextFlowJS/" width="100%" height="130px" scrolling="no">
+```html
 
-</iframe>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="" content="">
+        <!-- Default styles for TextFlowJS not recommended styles will be automatically loaded by JavaScript -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css"/>
+        <title>Text Flow JS</title>
+        <style>
+            body{
+                background: black;
+                color:white;
+            }a{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+    <!-- The element which want the effect -->
+    <!-- The class of the element is 'texter' you can change it by JavaScript -->
+    <p id="texter" style="font-size:30px;" class="texter">Hello everyone welcome to TextFlowJS by Aswanth V C. this is an example of the output of using TextFlowJS</p>
+        <br/>
+        <a href="https://github.com/aswanthabam/TextFlowJS/">View More In GitHub</a>
+        <br/>
+        <a href="https://github.com/aswanthabam/TextFlowJS/">View Documentation</a>
+        <!-- TextFlowJS Script -->
+          <script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
+        </script>
+        <!-- Script for the page -->
+        <script>
+        <!-- Change text size -->
+            this.wrapTextSize = 20;
+            <!-- Change Text Color -->
+            this.wrapTextColor = "#aed7d6";
+            <!-- Change cursor blinking frequency -->
+            this.blinkFrequency = 500;
+            <!-- Change cursor color -->
+            this.CursorBackgroundColor = "#f6f6f7";
+            <!-- Change Font family -->
+            this.wrapFontFamily = "Monospace";
+            <!-- Start wrapping you can give text and element as arguments -->
+            <!-- Automatically get the element and text from the class -->
+            <!-- Syntex "setWrap(text = null,elem = null);" -->
+            setWrap();
+        </script>
+    </body>
+</html>
+```
 
 ### Known Issues
 
