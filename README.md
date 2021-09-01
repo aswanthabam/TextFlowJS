@@ -88,6 +88,19 @@ You can customize the css attributes also:
 }
 ```
 
+### Structure
+The text inside your elemnt will be converted to this form to make the text flow correctly.
+```html
+<div id="abamContainer1">
+    <span id="abamtextContainer1">
+        <!-- Your text content will go here -->
+    </span>
+    <p id="abamCursor1">
+        <!-- This is the cursor element -->
+    </p>
+</div>
+```
+
 ### Example Code
 
 ```html
