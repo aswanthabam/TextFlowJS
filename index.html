@@ -12,6 +12,7 @@
                 background: black;
                 color:white;
             }a{
+                font-family: Monospace;
                 text-decoration: none;
             }
         </style>
@@ -61,6 +62,8 @@
             this.blinkFrequency = 500;
             &lt;!-- Change cursor color --&gt;
             this.CursorBackgroundColor = "#f6f6f7";
+            &lt;!-- Change Font family --&gt;
+            this.wrapFontFamily = "Monospace";
             &lt;!-- Start wrapping you can give text and element as arguments --&gt;
             &lt;!-- Automatically get the element and text from the class --&gt;
             &lt;!-- Syntex "setWrap(text = null,elem = null);" --&gt;
@@ -85,7 +88,7 @@
         texter2 = document.getElementById("texter2");
         console.log(texter2);
         this.wrapTextSize = 20;
-        this.dir = "";
+        this.wrapFontFamily = "Monospace";
         this.wrapTextColor = "#aed7d6";
         this.blinkFrequency = 500;
         this.CursorBackgroundColor = "#f6f6f7";
