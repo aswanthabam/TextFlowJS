@@ -62,6 +62,31 @@ this.breakPoint = 5; // Specify string index where to break
 this.breakTime = 1000; // Time to break in milliseconds
 this.breakKey = "e"; // stop 1 second when 'e' is reached
 ```
+### CSS customization
+
+You can customize the css attributes also: 
+```css
+#abamCursor1{
+    /*
+    Customize styles for the cursor by '#abamCursor1'. Some time you want to use '!important' to change default values
+    */
+}
+#abamtextContainer1{
+    /*
+    Customize styles for the span element containing the text by '#abamtextContainer1'. Some time you want to use '!important' to change default values
+    */
+}
+#abamContainer1{
+    /*
+    Customize styles for the div containing text and cursor by '#abamContainer1'. Some time you want to use '!important' to change default values
+    */
+}
+#lastKeyAbam{
+    /*
+    Customize styles for the last character in before the cursor by '#lastKeyAbam1'. Some time you want to use '!important' to change default values
+    */
+}
+```
 
 ### Example Code
 

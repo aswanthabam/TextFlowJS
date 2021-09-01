@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="./style.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
         <title>Text Flow JS</title>
+       
+        <script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
+        </script>
         <style>
             body{
                 background: black;
@@ -78,8 +81,7 @@
         <br/>
         <a href="https://abam.herokuapp.com/projects/TextFlowJS/">View Documentation</a>
         
-         <script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
-        </script>
+         
         
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
@@ -90,7 +92,9 @@
         console.log(texter2);
         this.wrapTextSize = 20;
         this.wrapFontFamily = "Monospace";
+        this.cursor.className = "p-unstyled";
         this.wrapTextColor = "#aed7d6";
+        this.dir = "ltr";
         this.blinkFrequency = 500;
         this.CursorBackgroundColor = "#f6f6f7";
         setWrap();
