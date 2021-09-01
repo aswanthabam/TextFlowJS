@@ -32,6 +32,7 @@ this.breakTime = 1000;
 this.breakKey = null;
 this.wrapTextColor = "#000000";
 this.CursorBackgroundColor = "#000000";
+this.wrapFontFamily = null;
 this.cursorWidth = 5;
 this.wrapTextSize = null;
 // Starting wrapper you can give text and element variables(optional) if not given it will be used from the className "texter"
@@ -61,6 +62,7 @@ function setWrap(text = null,elem = null) {
         this.textContainer.style.direction = this.dir;
         this.textContainer.style.color = this.wrapTextColor;
         this.textContainer.style.fontSize = this.wrapTextSize + "px";
+        this.textContainer.style.fontFamily = this.wrapFontFamily;
         this.container.appendChild(this.textContainer);
         this.container.appendChild(this.cursor);
         this.content = elem.textContent;
