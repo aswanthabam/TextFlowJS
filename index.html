@@ -20,7 +20,7 @@
        
         <p class="texter">Hello everyone welcome to TextFlowJS by Aswanth V C. this is an example of the output of using TextFlowJS</p>
         <br/>
-        Source Code 
+        Example Code 
         <br/>
         <pre><code class="language-html">
 &lt;!DOCTYPE html&gt;
@@ -48,15 +48,22 @@
         &lt;a href="https://github.com/aswanthabam/TextFlowJS/"&gt;View More In GitHub&lt;/a&gt;
         &lt;br/&gt;
         &lt;a href="https://github.com/aswanthabam/TextFlowJS/"&gt;View Documentation&lt;/a&gt;
+        &lt;!-- TextFlowJS Script --&gt;
           &lt;script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8"&gt;
         &lt;/script&gt;
+        &lt;!-- Script for the page --&gt;
         &lt;script&gt;
-            texter2 = document.getElementById("texter2");
-            console.log(texter2);
+        &lt;!-- Change text size --&gt;
             this.wrapTextSize = 20;
+            &lt;!-- Change Text Color --&gt;
             this.wrapTextColor = "#aed7d6";
+            &lt;!-- Change cursor blinking frequency --&gt;
             this.blinkFrequency = 500;
+            &lt;!-- Change cursor color --&gt;
             this.CursorBackgroundColor = "#f6f6f7";
+            &lt;!-- Start wrapping you can give text and element as arguments --&gt;
+            &lt;!-- Automatically get the element and text from the class --&gt;
+            &lt;!-- Syntex "setWrap(text = null,elem = null);" --&gt;
             setWrap();
         &lt;/script&gt;
     &lt;/body&gt;
@@ -78,6 +85,7 @@
         texter2 = document.getElementById("texter2");
         console.log(texter2);
         this.wrapTextSize = 20;
+        this.dir = "";
         this.wrapTextColor = "#aed7d6";
         this.blinkFrequency = 500;
         this.CursorBackgroundColor = "#f6f6f7";
