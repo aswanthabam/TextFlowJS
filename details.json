@@ -1,0 +1,25 @@
+{
+    "name":"TextFlowJS",
+    "version":"1.0.0",
+    "datas":"media/ProjectsCache/TextFlowJS-1.0.0/details.json",
+    "readme":"media/ProjectsCache/Victers-1.0.0/Readme.md",
+    "downloadFile":"None",
+    "description":"Text flow JS is a script to make text appear as Typing.",
+    "keywords":"hypertextmarkup,victers data sorter,victers,javascript,js,TextFlowJS,Typing,make text appeara s typing,html,typing appear,css,abam,aswanth vc,aswanth,abam tech",
+    "abamUserName":"aswanthvc",
+    "otherDetails":{
+        "downloadFile":"https://aswanthabam.github.io/TextFlowJS/",
+        "isImage":false,
+        "imageUrl":"",
+        "showPublic":{
+            "author":"Aswanth Vc",
+            "company":"ABAM",
+            "languages":["html","css","js"],
+            "company url":"https://abam.herokuapp.com",
+            "author url":"https://aswanthvc.herokuapp.com",
+            "github main url":"https://github.com/aswanthabam",
+            "github project url":"https://github.com/aswanthabam/TextFlowJS",
+            "version":"1.0.0"
+        }
+    }
+}
