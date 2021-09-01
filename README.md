@@ -1,7 +1,7 @@
-<script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
-</script>
 # TextFlowJS
+<iframe src="https://aswanthabam.github.io/TextFlowJS/" width="100%" height="130px" scrolling="no" border="0px">
 
+</iframe>
 Text flow js is a script to make text appear as Typing. You can view a simple example of this <a href="https://aswanthabam.github.io/TextFlowJS/">Here</a>
 
 ## Usage
@@ -65,12 +65,10 @@ this.breakKey = "e"; // stop 1 second when 'e' is reached
 
 ### Example
 
-<p class="texter"> This is a simple example of TextFlowJS</p>
+<iframe src="https://aswanthabam.github.io/TextFlowJS/" width="100%" height="130px" scrolling="no">
+
+</iframe>
 
 ### Known Issues
 
 1) Cant use Text Flow for more than one element.
-
-<script>
-    setWrap();
-</script>
