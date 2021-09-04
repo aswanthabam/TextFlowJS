@@ -4,7 +4,7 @@
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
         <meta name="" content="">
         
-        <link rel="stylesheet" href="./style.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
         <title>Text Flow JS</title>
        
@@ -24,6 +24,7 @@
     <body>
        
         <p class="texter">Hello everyone welcome to TextFlowJS by Aswanth V C. this is an example of the output of using TextFlowJS</p>
+        <p class="texter">You can use more than once</p>
         <br/>
         Example Code 
         <br/>
@@ -58,20 +59,22 @@
         &lt;/script&gt;
         &lt;!-- Script for the page --&gt;
         &lt;script&gt;
-        &lt;!-- Change text size --&gt;
-            this.wrapTextSize = 20;
+            &lt;!--Initializing new wrapper -->
+            obj.Elements[i] = new initWrap();
+            &lt;!-- Change text size --&gt;
+            obj.Elements[i].wrapTextSize = 20;
             &lt;!-- Change Text Color --&gt;
-            this.wrapTextColor = "#aed7d6";
+            obj.Elements[i].wrapTextColor = "#aed7d6";
             &lt;!-- Change cursor blinking frequency --&gt;
-            this.blinkFrequency = 500;
+            obj.Elements[i].blinkFrequency = 500;
             &lt;!-- Change cursor color --&gt;
-            this.CursorBackgroundColor = "#f6f6f7";
+            obj.Elements[i].CursorBackgroundColor = "#f6f6f7";
             &lt;!-- Change Font family --&gt;
-            this.wrapFontFamily = "Monospace";
+            obj.Elements[i].wrapFontFamily = "Monospace";
             &lt;!-- Start wrapping you can give text and element as arguments --&gt;
             &lt;!-- Automatically get the element and text from the class --&gt;
             &lt;!-- Syntex "setWrap(text = null,elem = null);" --&gt;
-            setWrap();
+            obj.Elements[i].setWrap();
         &lt;/script&gt;
     &lt;/body&gt;
 &lt;/html&gt;
@@ -90,14 +93,19 @@
         <script>
         texter2 = document.getElementById("texter2");
         console.log(texter2);
-        this.wrapTextSize = 20;
-        this.wrapFontFamily = "Monospace";
-        this.cursor.className = "p-unstyled";
-        this.wrapTextColor = "#aed7d6";
-        this.dir = "ltr";
-        this.blinkFrequency = 500;
-        this.CursorBackgroundColor = "#f6f6f7";
-        setWrap();
+        obj = new initWrap();
+        console.log(obj);
+        for(i = 0;i < obj.Elements.length ; i++)
+            {
+        obj.Elements[i].wrapTextSize = 20;
+        obj.Elements[i].wrapFontFamily = "Monospace";
+        obj.Elements[i].wrapTextColor = "#aed7d6";
+        obj.Elements[i].dir = "ltr";
+        obj.Elements[i].blinkFrequency = 500;
+        obj.Elements[i].CursorBackgroundColor = "#f6f6f7";
+        obj.Elements[i].setWrap();
+        }
+        
         </script>
     </body>
 </html>
