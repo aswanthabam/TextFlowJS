@@ -1,16 +1,13 @@
-#abamContainer1{
+.abamContainer1{
     margin: 1px;
 }
-#abamtextContainer1{
+.abamtextContainer1{
     
     margin-right: 0px;
     position: relative;
 }
-#abamCursor1{
+.abamCursor1{
     margin: 0px;
     position: absolute;
     display: table-cell;
-}
-#lastKeyAbam{
-    margin-right: 10px;
 }

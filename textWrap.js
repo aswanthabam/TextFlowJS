@@ -1,48 +1,58 @@
-this.SetClassName = "texter"; //change default class name
-
-// Getting the classes if exists
-this.texter = document.getElementsByClassName(this.SetClassName);
-// Creating the new elemnts and setting id
-cursor = document.createElement("p");
-cursor.id = "abamCursor1";
-this.container = document.createElement("div");
-this.container.id = "abamContainer1";
-this.textContainer = document.createElement("span");
-this.textContainer.id = "abamtextContainer1";
-// Adding the stylsheet to header
-var link = document.createElement('link');
-link.rel = 'stylesheet';  
-link.type = 'text/css'; 
-link.href = 'https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css';
-document.getElementsByTagName('HEAD')[0].appendChild(link);
-// Declaring loopable and content variables
-this.content;
-this.i= 0; this.m = 0;
-// Screen width
-this.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-this.finished = false;
-// Some variables which store the styling details about the code these can be changed from outside of the code to customize
-this.cursorHeight = null;
-this.blinkFrequency = 200;
-this.dir = "";
-this.minSpeed = 50;
-this.maxSpeed = 100;
-this.breakPoint = null;
-this.breakTime = 1000;
-this.breakKey = null;
-this.wrapTextColor = "#000000";
-this.CursorBackgroundColor = "#000000";
-this.wrapFontFamily = null;
-this.cursorWidth = 5;
-this.wrapTextSize = null;
+function initWrap(text = null,elem = null,WorkingWith = 0){
+    if(text != null) this.currentText = text;
+    else this.currentText = null;
+    if(elem != null) this.currentElement = elem;
+    else this.currentElement = null;
+    this.SetClassName = "texter";
+    //change default class name
+    
+    // Getting the classes if exists
+    this.texter = document.getElementsByClassName(this.SetClassName);
+    // Creating the new elemnts and setting id
+    this.cursor = document.createElement("p");
+    this.cursor.className += "abamCursor1";
+    this.container = document.createElement("div");
+    this.container.className += "abamContainer1";
+    this.textContainer = document.createElement("span");
+    this.textContainer.className += "abamtextContainer1";
+    // For multiple work counting
+    this.multiI = WorkingWith;
+    // Adding the stylsheet to header
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';  
+    link.type = 'text/css'; 
+    link.href = 'https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css';
+    document.getElementsByTagName('HEAD')[0].appendChild(link);
+    // Declaring loopable and content variables
+    this.content;
+    this.i= 0; this.m = 0;
+    // Screen width
+    this.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    this.finished = false;
+    // Some variables which store the styling details about the code these can be changed from outside of the code to customize
+    this.cursorHeight = null;
+    this.blinkFrequency = 200;
+    this.dir = "";
+    this.minSpeed = 50;
+    this.maxSpeed = 100;
+    this.breakPoint = null;
+    this.breakTime = 1000;
+    this.breakKey = null;
+    this.wrapTextColor = "#000000";
+    this.CursorBackgroundColor = "#000000";
+    this.wrapFontFamily = null;
+    this.cursorWidth = 5;
+    this.wrapTextSize = null;
+    if(this.currentElement == null)
+        this.Elements = this.fetchElements();
+}
 // Starting wrapper you can give text and element variables(optional) if not given it will be used from the className "texter"
-function setWrap(text = null,elem = null) {
+initWrap.prototype.setWrap = function(text = null,elem = null) {
+    if(text == null && this.currentText != null) text = this.currentText;
+    if(this.currentElement != null) elem = this.currentElement;
         if(elem == null){
-            elem = texter[0];
-            if (elem == undefined){
-                return 0;
-            }
-        }
+            this.multi();
+        }else{
         if(this.wrapTextSize == null){
             this.wrapTextSize = elem.getBoundingClientRect().height;
         }
@@ -52,6 +62,7 @@ function setWrap(text = null,elem = null) {
             this.cursor.style.height = this.cursorHeight + "px";
         }else{
             this.cursor.style.height = this.wrapTextSize + "px";
+            
         }
         console.log("Cursor Height: "+this.cursorHeight);
         
@@ -77,52 +88,78 @@ function setWrap(text = null,elem = null) {
         this.elem.textContent = "";
         this.counter = this.getRandom(this.minSpeed,this.maxSpeed);
         this.i = 0;
-        this.myvar = setTimeout(this.setTextAbamTech,this.counter);
-        this.blinker = setTimeout(this.blinkCursor,this.blinkFrequency);
-    
+        this.myvar = setTimeout(this.setTextAbamTech,this.counter,this);
+        this.blinker = setTimeout(this.blinkCursor,this.blinkFrequency,this);
+        }
     return 0;
-}
-function multi(text){
-    if(this.texter.length > 1){
-        console.log("Cant place more than 1 class at the same time.\nHint:  Please use setWrap(text,element) for each element");
+};
+initWrap.prototype.fetchElements = function(){
+    m = [];
+    for(var i = 0;i<this.texter.length;i++){
+       newObj = new initWrap(null,this.texter[i],i+1);
+       m.push(newObj);
+    }
+    return m;
+};
+initWrap.prototype.multi = function(){
+    if(this.Elements.length == 1){
+        
+        this.cloneWrap(this.Elements[0],this);
+        this.Elements[0].setWrap();
+        console.log(this.Elements[0]);
         return 0;
     }
-    for(var i = 0;i<this.texter.length;i++){
-       setWrap(text,this.texter[i]);
+    for(var i = 0;i<this.Elements.length ;i++){
+       this.Elements[i].setWrap();
     }
+    return this.Elements;
+};
+initWrap.prototype.cloneWrap = function(c1,c2){
+    c1.cursorHeight = c2.cursorHeight;
+    c1.blinkFrequency = c2.blinkFrequency;
+    c1.dir = c2.dir;
+    c1.minSpeed = c2.minSpeed;
+    c1.maxSpeed = c2.maxSpeed;
+    c1.breakPoint = c2.breakPoint;
+    c1.breakTime = c2.breakTime;
+    c1.breakKey = c2.breakKey;
+    c1.wrapTextColor = c2.wrapTextColor;
+    c1.CursorBackgroundColor = c2.CursorBackgroundColor;
+    c1.wrapFontFamily = c2.wrapFontFamily;
+    c1.cursorWidth = c2.cursorWidth;
+    c1.wrapTextSize = c2.wrapTextSize;
 }
-function blinkCursor(){
-    if (this.m > 0){
-        this.cursor.style.opacity = "0";
-        this.m = 0;
-        this.blinker = setTimeout(this.blinkCursor,this.blinkFrequency);
+initWrap.prototype.blinkCursor = function(This){
+    if (This.m > 0){
+        This.cursor.style.opacity = "0";
+        This.m = 0;
+        This.blinker = setTimeout(This.blinkCursor,This.blinkFrequency,This);
     }else{
-        this.cursor.style.opacity = "1";
-        this.m = 1;
-        this.blinker = setTimeout(this.blinkCursor,this.blinkFrequency);
+        This.cursor.style.opacity = "1";
+        This.m = 1;
+        This.blinker = setTimeout(This.blinkCursor,This.blinkFrequency,This);
     }
-}
-function getRandom(start,end){
+};
+initWrap.prototype.getRandom = function(start,end){
     return Math.floor(Math.random()*(end-start+1)) + start;
-}
-function setTextAbamTech(){
-    this.elem.innerHTML = this.elem.textContent + '<span id="lastKeyAbam">'+this.content[this.i]+"</span>";
-    px = document.getElementById("lastKeyAbam");
-    this.cursor.style.top = px.getBoundingClientRect().top - this.cursorHeight + "px";
-    px = document.getElementById("lastKeyAbam");
+};
+initWrap.prototype.setTextAbamTech = function(This){
+    This.elem.innerHTML = This.elem.textContent + '<span id="lastKeyAbam'+This.multiI+'" style="margin-right:20px;">'+This.content[This.i]+"</span>";
+    px = document.getElementById("lastKeyAbam"+This.multiI);
+    This.cursor.style.top = px.getBoundingClientRect().top - This.cursorHeight + "px";
     
-    this.cursor.style.left = px.getBoundingClientRect().left + px.getBoundingClientRect().width + "px";
-    this.i++;
+    This.cursor.style.left = px.getBoundingClientRect().left + px.getBoundingClientRect().width + "px";
+    This.i++;
     
-    if (this.i < this.content.length){
-        this.counter = this.getRandom(this.minSpeed,this.maxSpeed);
-        if((this.breakPoint != null && i == breakPoint) || (this.breakKey != null && this.content[i - 1] == this.breakKey)){
-            setTimeout(this.setTextAbamTech,this.breakTime);
+    if (This.i < This.content.length){
+        This.counter = This.getRandom(This.minSpeed,This.maxSpeed);
+        if((This.breakPoint != null && i == breakPoint) || (This.breakKey != null && This.content[i - 1] == This.breakKey)){
+            setTimeout(This.setTextAbamTech,This.breakTime,This);
         }
         else{
-            setTimeout(this.setTextAbamTech,this.counter);
+            setTimeout(This.setTextAbamTech,This.counter,This);
         }
     }else{
         finished = true;
     }
-}
+};
