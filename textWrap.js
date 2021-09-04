@@ -64,8 +64,6 @@ initWrap.prototype.setWrap = function(text = null,elem = null) {
             this.cursor.style.height = this.wrapTextSize + "px";
             
         }
-        console.log("Cursor Height: "+this.cursorHeight);
-        
         this.cursor.style.background = this.CursorBackgroundColor;
         
         this.container.width = "100%";
@@ -106,7 +104,6 @@ initWrap.prototype.multi = function(){
         
         this.cloneWrap(this.Elements[0],this);
         this.Elements[0].setWrap();
-        console.log(this.Elements[0]);
         return 0;
     }
     for(var i = 0;i<this.Elements.length ;i++){
