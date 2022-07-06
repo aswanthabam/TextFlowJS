@@ -21,7 +21,7 @@ function initWrap(text = null,elem = null,WorkingWith = 0){
     var link = document.createElement('link');
     link.rel = 'stylesheet';  
     link.type = 'text/css'; 
-    link.href = 'https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@main/style.js';
+    link.href = 'https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@main/style.css';
     document.getElementsByTagName('HEAD')[0].appendChild(link);
     // Declaring loopable and content variables
     this.content;
