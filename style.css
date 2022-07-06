@@ -1,13 +1,24 @@
 .abamContainer1{
     margin: 1px;
+    height: auto;
 }
 .abamtextContainer1{
-    
+	width: auto;
+	height: auto;
     margin-right: 0px;
     position: relative;
+    overflow: hidden;
 }
-.abamCursor1{
+.abamtextContainer1::after{
+	content: '';
     margin: 0px;
     position: absolute;
-    display: table-cell;
+    display: inline;
+    background: red;
+    width: 5px;
+    height: calc(100% - 4px);
+    overflow: hidden;
+}
+.abamCursor1{
+	display: none !important; 
 }
