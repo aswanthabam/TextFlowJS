@@ -21,7 +21,7 @@ function initWrap(text = null,elem = null,WorkingWith = 0){
     var link = document.createElement('link');
     link.rel = 'stylesheet';  
     link.type = 'text/css'; 
-    link.href = 'https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@main/style.css';
+    link.href = 'https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css';
     document.getElementsByTagName('HEAD')[0].appendChild(link);
     // Declaring loopable and content variables
     this.content;
@@ -127,7 +127,7 @@ initWrap.prototype.cloneWrap = function(c1,c2){
     c1.wrapTextSize = c2.wrapTextSize;
     c1.cursor.style.position = "absolute";
     if(c1.wrapTextSize == null){
-        c1.wrapTextSize = c1.getBoundingClientRect().height;
+       // c1.wrapTextSize = c1.getBoundingClientRect().height;
     }
     if(c1.cursorHeight == null){
         c1.cursorHeight = c2.wrapTextSize;
