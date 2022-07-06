@@ -9,7 +9,7 @@
         <!-- default styles for TextFlowJS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css">
         <!-- TextFlowJS -->
-        <script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
+        <script src="./textWrap.js" type="text/javascript" charset="utf-8">
         </script>
         <style>
             body{
@@ -98,11 +98,12 @@
             // creaing a new wrap
             obj = new initWrap();
             // Setting textSize
-            obj.wrapTextSize = 20;
+            obj.wrapTextSize = 50;
             // Setting font family
             obj.wrapFontFamily = "Monospace";
             // Setting textColor
             obj.wrapTextColor = "#aed7d6";
+            obj.Elements[0].wrapTextSize = 20;
             // Setting text direction
             obj.dir = "ltr";
             // Setting cursor blonk frequency

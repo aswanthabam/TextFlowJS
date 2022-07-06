@@ -62,7 +62,6 @@ initWrap.prototype.setWrap = function(text = null,elem = null) {
             this.cursor.style.height = this.cursorHeight + "px";
         }else{
             this.cursor.style.height = this.wrapTextSize + "px";
-            
         }
         this.cursor.style.background = this.CursorBackgroundColor;
         
@@ -95,20 +94,21 @@ initWrap.prototype.fetchElements = function(){
     m = [];
     for(var i = 0;i<this.texter.length;i++){
        newObj = new initWrap(null,this.texter[i],i+1);
+       
        m.push(newObj);
     }
     return m;
 };
 initWrap.prototype.multi = function(){
     if(this.Elements.length == 1){
-        
-        this.cloneWrap(this.Elements[0],this);
+        console.log(this.cloneWrap(this.Elements[0],this));
         this.Elements[0].setWrap();
-        return 0;
-    }
+
+    }else{
     for(var i = 0;i<this.Elements.length ;i++){
+       console.log(this.cloneWrap(this.Elements[i],this));
        this.Elements[i].setWrap();
-    }
+    }}
     return this.Elements;
 };
 initWrap.prototype.cloneWrap = function(c1,c2){
@@ -125,6 +125,14 @@ initWrap.prototype.cloneWrap = function(c1,c2){
     c1.wrapFontFamily = c2.wrapFontFamily;
     c1.cursorWidth = c2.cursorWidth;
     c1.wrapTextSize = c2.wrapTextSize;
+    c1.cursor.style.position = "absolute";
+    if(c1.wrapTextSize == null){
+        c1.wrapTextSize = c1.getBoundingClientRect().height;
+    }
+    if(c1.cursorHeight == null){
+        c1.cursorHeight = c2.wrapTextSize;
+    }
+    return c1;
 }
 initWrap.prototype.blinkCursor = function(This){
     if (This.m > 0){
@@ -143,8 +151,8 @@ initWrap.prototype.getRandom = function(start,end){
 initWrap.prototype.setTextAbamTech = function(This){
     This.elem.innerHTML = This.elem.textContent + '<span id="lastKeyAbam'+This.multiI+'" style="margin-right:20px;">'+This.content[This.i]+"</span>";
     px = document.getElementById("lastKeyAbam"+This.multiI);
-    This.cursor.style.top = px.getBoundingClientRect().top - This.cursorHeight + "px";
     
+    This.cursor.style.top = px.getBoundingClientRect().top  + "px";
     This.cursor.style.left = px.getBoundingClientRect().left + px.getBoundingClientRect().width + "px";
     This.i++;
     
