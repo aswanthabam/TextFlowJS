@@ -3,14 +3,12 @@
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="" content="">
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
         <title>Text Flow JS</title>
-        <!-- default styles for TextFlowJS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@1.0.1/style.css">
         <!-- TextFlowJS -->
-        <script src="./textWrap.js" type="text/javascript" charset="utf-8">
-        </script>
+        <link rel="stylesheet" href="./style.css" type="text/css" media="all" />
+        
         <style>
         	
             body{
@@ -25,7 +23,7 @@
     </head>
     <body>
        <!-- Creating elements and giving className "texter" for the elements which need that effect -->
-        <p class="texter">Hello everyone welcome to TextFlowJS by Aswanth V C. this is an example of the output of using TextFlowJS</p>
+        <h1 class="texter">Hello everyone welcome to TextFlowJS by Aswanth V C. this is an example of the output of using TextFlowJS</h1>
         <!-- You can use this effect for more than once -->
         <p class="texter">You can use more than once</p>
         <br/>
@@ -92,21 +90,26 @@
         <a href="https://github.com/aswanthabam/TextFlowJS/">View More In GitHub</a>
         <br/>
         <a href="https://abam.herokuapp.com/projects/TextFlowJS/">View Documentation</a>
-<<<<<<< HEAD
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
         <!-- and it's easy to individually load additional languages -->
         <script>hljs.highlightAll();</script>
-=======
         
-         <script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
-        </script>
-        
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
-<!-- and it's easy to individually load additional languages -->
-<script>hljs.highlightAll();</script>
->>>>>>> d8a2de5 (h)
-        <script>
+         <!--script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
+        </script-->
+        <script src="./textWrap.js" type="text/javascript" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+        <!-- and it's easy to individually load additional languages -->
+        <script>hljs.highlightAll();</script>
+		<script>
+			obj1 = avcWrapOne(0);
+			obj1.textColor = "#ff0000";
+			obj1.cursorColor = "#121212";
+			obj1.cursorWidth = 7;
+			obj1.cursorVisible = true;
+			obj1.start(7000);
+			avcWrapOne(1).start(2000);
+		</script>
+        <!--script>
             // creaing a new wrap
             obj = new initWrap();
             // Setting textSize
@@ -128,6 +131,6 @@
             // You can call 'obj.Elements' This will return an array of all elements
             // Customize it like this
             // obj.Elements[0].CursorBackgroundColor = "#562626";
-        </script>
+        </script-->
     </body>
 </html>

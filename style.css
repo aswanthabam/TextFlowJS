@@ -1,24 +1,55 @@
-.abamContainer1{
+@keyframes avc-cursor-anim
+{
+	0%{
+		opacity: 1;
+	}
+	/*20%{
+		opacity: 0;
+	}*/
+	50%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+:root{
+    --avc-textwrap-text-color: #121212;
+    --avc-textwrap-cursor-color: #121212;
+}
+.avc-textwrap-container{
     margin: 1px;
     height: auto;
+    overflow: hidden;
+    --avc-textwrap-line-height: 20px;
+    --avc-textwrap-cursor-width: 20px;
 }
-.abamtextContainer1{
+.avc-textwrap-text-container{
 	width: auto;
 	height: auto;
-    margin-right: 0px;
+	margin: 0px;
     position: relative;
-    overflow: hidden;
+    display: inline-block;
+    color: var(--avc-textwrap-text-color);
+    line-height: var(--avc-textwrap-line-height);
 }
-.abamtextContainer1::after{
+
+.avc-textwrap-text-container::after{
 	content: '';
     margin: 0px;
     position: absolute;
     display: inline;
-    background: red;
-    width: 5px;
-    height: calc(100% - 4px);
+    background: var(--avc-textwrap-cursor-color);
+    width: var(--avc-textwrap-cursor-width);
+    height: calc(var(--avc-textwrap-line-height) - 4px);
+    margin: 2px;
     overflow: hidden;
+    animation: avc-cursor-anim 0.5s linear infinite;
 }
-.abamCursor1{
-	display: none !important; 
+
+.avc-textwrap-cursor-invisible::after
+{
+	display: none !important;
+	opacity: 0 !important;
+	animation: none !important;
 }
