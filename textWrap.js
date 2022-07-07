@@ -122,11 +122,12 @@ class avcTextWrap
 
 // Wrap all elements
 // call this function to wrap all elenents contining the class name "texter"
-function avcWrapAll()
+// Can pass className as a argument
+function avcWrapAll(className = "texter")
 {
 	wrap = new avcWrap(); // Avc wrap element
 	wrap.root = document.querySelector(":root"); // Not used currently
-	wrap.elems = document.getElementsByClassName("texter"); // GEt all element containiing the texter class name
+	wrap.elems = document.getElementsByClassName(className); // GEt all element containiing the texter class name
 	wrap.wraps = [];
 	for(i = 0;i < wrap.elems.length;i++)
 	{
@@ -142,14 +143,15 @@ function avcWrapAll()
 // can pass a element as a parametre or a number
 // if number the numbrer'th element will be used to wrap
 // if no paramente is passed the firest elelment will be used
-function avcWrapOne(elem = null)
+// Can pass the className as second argument
+function avcWrapOne(elem = null,className = "texter")
 {
 	wrap = new avcWrap();
 	wrap.root = document.querySelector(":root");
 	if(elem == null){
 		// Default clause no value passed
 		try{
-			wrap.elems = document.getElementsByClassName("texter");
+			wrap.elems = document.getElementsByClassName(className);
 		}
 		catch(e){
 			console.log("No element with classname");
@@ -162,7 +164,7 @@ function avcWrapOne(elem = null)
 			// number
 			// try if a element with the name exit or not
 			try{
-				wrap.elems = [document.getElementsByClassName("texter")[elem]];
+				wrap.elems = [document.getElementsByClassName(className)[elem]];
 			}
 			catch(e){
 				console.log("No element found");
