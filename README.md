@@ -96,25 +96,26 @@ You can customize the css attributes also:
 ### Example Code
 
 ```html
-
 <!-- Example Project of TextFlowJS made by Aswanth Vc -->
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="" content="">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
         <title>Text Flow JS</title>
-        <!-- default styles for TextFlowJS -->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css">
-        <!-- TextFlowJS -->
-        <script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
-        </script>
+
+        <!-- TextFlowJS StyleSheet -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@1.0.2/style.css">
+        <!-- Script for TextFlowJS -->
+        <script src="https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@1.0.2/textWrap.js" type="text/javascript" charset="utf-8"></script>
+        
         <style>
             body{
-                background: black;
-                color:white;
+                background: white;
+                color: black;
             }a{
-                color: white;
+                color: black;
                 font-family: Monospace;
                 text-decoration: none;
             }
@@ -122,35 +123,23 @@ You can customize the css attributes also:
     </head>
     <body>
        <!-- Creating elements and giving className "texter" for the elements which need that effect -->
-        <p class="texter">Hello everyone welcome to TextFlowJS by Aswanth V C. this is an example of the output of using TextFlowJS</p>
+        <h1 class="texter">Hello everyone welcome to TextFlowJS by Aswanth V C. this is an example of the output of using TextFlowJS</h1>
         <!-- You can use this effect for more than once -->
         <p class="texter">You can use more than once</p>
         <br/>
-        <a href="https://github.com/aswanthabam/TextFlowJS/">View More In GitHub</a>
-        <br/>
-        <a href="https://abam.herokuapp.com/projects/TextFlowJS/">View Documentation</a>
-        <script>
-            // creaing a new wrap
-            obj = new initWrap();
-            // Setting textSize
-            obj.wrapTextSize = 20;
-            // Setting font family
-            obj.wrapFontFamily = "Monospace";
-            // Setting textColor
-            obj.wrapTextColor = "#aed7d6";
-            // Setting text direction
-            obj.dir = "ltr";
-            // Setting cursor blonk frequency
-            obj.blinkFrequency = 500;
-            // Setting Cursor background color
-            obj.CursorBackgroundColor = "#f6f6f7";
-            // Initializing element
-            obj.setWrap();
-            // If you want to set different styles for different elements
-            // You can call 'obj.Elements' This will return an array of all elements
-            // Customize it like this
-            // obj.Elements[0].CursorBackgroundColor = "#562626";
-        </script>
+        <!-- and it's easy to individually load additional languages -->
+        <script>hljs.highlightAll();</script>
+		<script>
+            // Wrap the first element 
+			obj1 = avcWrapOne(0);
+            // Set styles
+			obj1.textColor = "#ff0000"; // Text Color
+			obj1.cursorColor = "#121212"; //Cursor COlor
+			obj1.cursorWidth = 7; //cursor width
+			obj1.cursorVisible = true; // if want the cursor to be visible or not
+			obj1.start(7000); // Start the animation and it would be completed in almost 7second (the time may warry because random is used)
+			avcWrapOne(1).start(2000); // start the animation for the second element (duration = 2seconds)
+		</script>
     </body>
 </html>
 
