@@ -7,10 +7,10 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
         <title>Text Flow JS</title>
 
-        <!-- TextFlowJS  Styles-->
-        <link rel="stylesheet" href="./style.css" type="text/css" media="all" />
-        <!-- TextFLowJS JavaScript -->
-        <script src="./textWrap.js" type="text/javascript" charset="utf-8"></script>
+        <!-- TextFlowJS StyleSheet -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@1.0.2/style.css">
+        <!-- Script for TextFlowJS -->
+        <script src="https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@1.0.2/textWrap.js" type="text/javascript" charset="utf-8"></script>
         
         <style>
             body{
@@ -32,7 +32,52 @@
         Example Code 
         <br/>
         <pre><code class="language-html">
+&lt!-- Example Project of TextFlowJS made by Aswanth Vc --&gt
+&lt!DOCTYPE html&gt
+&lthtml&gt
+    &lthead&gt
+        &ltmeta http-equiv="content-type" content="text/html; charset=utf-8" /&gt
+        &ltmeta name="viewport" content="width=device-width"&gt
+        &ltlink rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css"&gt
+        &lttitle&gtText Flow JS&lt/title&gt
 
+        &lt!-- TextFlowJS StyleSheet --&gt
+        &ltlink rel="stylesheet" href="https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@1.0.2/style.css"&gt
+        &lt!-- Script for TextFlowJS --&gt
+        &ltscript src="https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@1.0.2/textWrap.js" type="text/javascript" charset="utf-8"&gt&lt/script&gt
+        
+        &ltstyle&gt
+            body{
+                background: white;
+                color: black;
+            }a{
+                color: black;
+                font-family: Monospace;
+                text-decoration: none;
+            }
+        &lt/style&gt
+    &lt/head&gt
+    &ltbody&gt
+       &lt!-- Creating elements and giving className "texter" for the elements which need that effect --&gt
+        &lth1 class="texter"&gtHello everyone welcome to TextFlowJS by Aswanth V C. this is an example of the output of using TextFlowJS&lt/h1&gt
+        &lt!-- You can use this effect for more than once --&gt
+        &ltp class="texter"&gtYou can use more than once&lt/p&gt
+        &ltbr/&gt
+        &lt!-- and it's easy to individually load additional languages --&gt
+        &ltscript&gthljs.highlightAll();&lt/script&gt
+		&ltscript&gt
+            // Wrap the first element 
+			obj1 = avcWrapOne(0);
+            // Set styles
+			obj1.textColor = "#ff0000"; // Text Color
+			obj1.cursorColor = "#121212"; //Cursor COlor
+			obj1.cursorWidth = 7; //cursor width
+			obj1.cursorVisible = true; // if want the cursor to be visible or not
+			obj1.start(7000); // Start the animation and it would be completed in almost 7second (the time may warry because random is used)
+			avcWrapOne(1).start(2000); // start the animation for the second element (duration = 2seconds)
+		&lt/script&gt
+    &lt/body&gt
+&lt/html&gt
         </code></pre>
         <a href="https://github.com/aswanthabam/TextFlowJS/">View More In GitHub</a>
         <br/>
