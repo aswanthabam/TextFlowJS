@@ -8,99 +8,89 @@ Text flow js is a script to make text appear as Typing. You can view a simple ex
 Here is the instructions for the Usage
 
 ### Using JSDelivr
-Use the TextFlowJS script from . Using Stylesheet is not mandatory because Stylesheet will be loaded by javascript. Only use Stylesheet if the default styles are not working.
+
+Use the TextFlowJS Java Script and CSS 
 
 ```html
-<!-- Stylesheet for TextFlowJS Not recommended this will be automatically loaded by javascript -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css">
+<!-- TextFlowJS StyleSheet -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@1.0.2/style.css">
 <!-- Script for TextFlowJS -->
-<script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
+<script src="https://cdn.jsdelivr.net/gh/avc-tech/TextFlowJS@1.0.2/textWrap.js" type="text/javascript" charset="utf-8">
 </script>
 ```
-Then create a new wrap by ```obj = new initWrap()``` in your script. You can give the text and element as arguments if needed. By default the text and elem will be taken from the element with "texter" class name. You can customize this class in your java script.
+Add class name "texter" to the elements to which you want to add the TextFlowJS. Then create a new wrap by ```obj = avcWrapAll()``` or ```obj = avcWrapOne(elem)```. This will return a ```avcWrap``` object on which you can customize the colors ,width etc. and start the text transition.
+Here is a basic model of the script you want to call. We recommend to add these script to the end of the ```body```. 
+
+#### Wraping all elements with Class Name "texter"
+
 ```html
 <script>
-    Obj = new initWrap(text = null,elem = null,WorkingWith = 0);
-    // Create new TextFlow
-    // optional arguments text (text to flow), elem (element) and WorkingWith (If have more than one element with className you can init only for one element by the number of element)
+    // Wrap all elements with the className texter
+    // Return avcWrap object store this for customisation and for beggining transition.
+    Obj = avcWrapAll();
+    // Call the start function to start the transition.
+    // You can pass the duration as a parameter
+    Obj.start(2000); // 2 second duration
 </script>
 ```
-
+#### Wraping one element
+You can use the ```avcWrapOne(elem)``` function to wrap only one element. You can pass the element as the parameter or the index of that element (strting from 0) or leave it blank to automatically wrap the first element.
+```html
+<script>
+    // Wrap one element
+    // Return avcWrap object store this for customisation and for beggining transition.
+    
+    // Passing the element as a parameter
+    elem = document.querySelector("#your-element");
+    Obj = avcWrapOne(elem);
+    
+    // Passing index as parameter
+    Obj = avcWrapOne(0);
+    
+    // Noting passing automatically wrap the first element
+    Obj = avcWrapOne();
+    
+    // Call the start function to start the transition.
+    // You can pass the duration as a parameter
+    Obj.start(2000); // 2 second duration
+</script>
+```
+Note : If you want to change the default class name ("texter"). you can pass the new class name as the first argument for the ```avcWrapAll("yourclassname")``` or the second argument of ```avcWrapOne(elem,"yourclassname")```
 ### Customizing
-All customisation want to be done after creating object  ```initWrap()```
+All customisation can be done by the ```avcWrap``` instance which is returned when calling the function. You can also customize more by changing the css attributes and variables.
 
-Change the text color, font size, font family etc.
+More customisation can be done by the css of your element itself. We only recommend you to change the values which are created by us. Like the cursor width, color etc.
+ ##### Change the text color and cursor color
 ```js
-obj.wrapTextColor = "#000000";
-obj.wrapFontFamily = "Monospace";
-obj.wrapTextSize = 20; // 20 px
+obj.textColor = "#12121270";
+obj.cursorColor = "#121212";
 ```
-Change speed of the TextFlow by using ```obj.minSpeed``` and ```obj.maxSpeed```. the speed will be randomly obtained within the range.
+##### Change the cursor dimensions
 ```js
-obj.minSpeed = 50; // In milliseconds
-obj.maxSpeed = 100; // In milliseconds
+obj.cursorWidth = 7;
+obj.cursorVisible = false; // make cursor invisible
 ```
-Change cursor background color, width, height etc. Default value of height is the height of the text(i.e font size).
+##### Change the duration of animation
 ```js
-obj.cursorHeight = 6; // 6 px (not recommended to set)
-obj.CursorBackgroundColor = "#000000";
-obj.cursorWidth = 5; // 5 px
+obj.duration = 3000; // you can also pass this as a attribute in the obj.start() method
+obj.offset = 40; // offset
 ```
-Change the default class name
-```js
-obj.setClassName = "texter2";
-```
-Change direction of the text by ```obj.dir```.
-```js
-obj.dir = "rtl"; // direction from rigth to left
-```
-Change cursor blinking frequency by ```obj.blinkFrequency```.(in milliseconds)
-```js
-obj.blinkFrequency = 200; //In milliseconds
-```
-Change the break point (i.e to stop flow for some time when a character or an index is reached)
-```js
-obj.breakPoint = 5; // Specify string index where to break
-obj.breakTime = 1000; // Time to break in milliseconds
-obj.breakKey = "e"; // stop 1 second when 'e' is reached
-```
-Get Array of all elements using the className by ```obj.Elements```. You can customise every element like below:
-```js
-obj.Elements[0].wrapTextColor = "red";
-// Change the text color of first element with className using this.
-```
+Offset is the value by which range the duration can be vary. Transition speed of the text will be a random number between the ```duration-offset``` and ```duration+offset```. This done for a smooth transition of text.
+
 ### CSS customization
 
 You can customize the css attributes also: 
 ```css
-.abamCursor1{
+.avc-textwrap-container{
     /*
-    Customize styles for the cursor by '#abamCursor1'. Some time you want to use '!important' to change default values
+    Customize styles for your element by '.avc-textwrap-container'. Some time you want to use '!important' to change default values
     */
 }
-.abamtextContainer1{
+.avc-textwrap-text-container{
     /*
-    Customize styles for the span element containing the text by '#abamtextContainer1'. Some time you want to use '!important' to change default values
+    Customize styles for the span element containing the text by 'avc-textwrap-text-container'. Some time you want to use '!important' to change default values
     */
 }
-.abamContainer1{
-    /*
-    Customize styles for the div containing text and cursor by '#abamContainer1'. Some time you want to use '!important' to change default values
-    */
-}
-```
-
-### Structure
-The text inside your elemnt will be converted to this form to make the text flow correctly.
-```html
-<div class="abamContainer1">
-    <span class="abamtextContainer1">
-        <!-- Your text content will go here -->
-    </span>
-    <p class="abamCursor1">
-        <!-- This is the cursor element -->
-    </p>
-</div>
 ```
 
 ### Example Code
@@ -167,4 +157,4 @@ The text inside your elemnt will be converted to this form to make the text flow
 ```
 
 ### New with 1.0.2 
-1) In this versio  you can use effect for more than one element
+1) We just fixed some bug and improved the smoothness. customisation in this version is lower if you want more customisation use the 1.0.1 release.
