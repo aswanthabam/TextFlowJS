@@ -6,11 +6,13 @@
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
         <title>Text Flow JS</title>
-        <!-- TextFlowJS -->
+
+        <!-- TextFlowJS  Styles-->
         <link rel="stylesheet" href="./style.css" type="text/css" media="all" />
-        
+        <!-- TextFLowJS JavaScript -->
+        <script src="./textWrap.js" type="text/javascript" charset="utf-8"></script>
+
         <style>
-        	
             body{
                 background: white;
                 color: black;
@@ -30,62 +32,7 @@
         Example Code 
         <br/>
         <pre><code class="language-html">
-&lt;!-- Example Project of TextFlowJS made by Aswanth Vc --&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;meta http-equiv="content-type" content="text/html; charset=utf-8" /&gt;
-        &lt;meta name="" content=""&gt;
-        &lt;title&gt;Text Flow JS&lt;/title&gt;
-        &lt;!-- default styles for TextFlowJS --&gt;
-        &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/style.css"&gt;
-        &lt;!-- TextFlowJS --&gt;
-        &lt;script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8"&gt;
-        &lt;/script&gt;
-        &lt;style&gt;
-            body{
-                background: black;
-                color:white;
-            }a{
-                color: white;
-                font-family: Monospace;
-                text-decoration: none;
-            }
-        &lt;/style&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-       &lt;!-- Creating elements and giving className "texter" for the elements which need that effect --&gt;
-        &lt;p class="texter"&gt;Hello everyone welcome to TextFlowJS by Aswanth V C. this is an example of the output of using TextFlowJS&lt;/p&gt;
-        &lt;!-- You can use this effect for more than once --&gt;
-        &lt;p class="texter"&gt;You can use more than once&lt;/p&gt;
-        &lt;br/&gt;
-        &lt;a href="https://github.com/aswanthabam/TextFlowJS/"&gt;View More In GitHub&lt;/a&gt;
-        &lt;br/&gt;
-        &lt;a href="https://abam.herokuapp.com/projects/TextFlowJS/"&gt;View Documentation&lt;/a&gt;
-        &lt;script&gt;
-            // creaing a new wrap
-            obj = new initWrap();
-            // Setting textSize
-            obj.wrapTextSize = 20;
-            // Setting font family
-            obj.wrapFontFamily = "Monospace";
-            // Setting textColor
-            obj.wrapTextColor = "#aed7d6";
-            // Setting text direction
-            obj.dir = "ltr";
-            // Setting cursor blonk frequency
-            obj.blinkFrequency = 500;
-            // Setting Cursor background color
-            obj.CursorBackgroundColor = "#f6f6f7";
-            // Initializing element
-            obj.setWrap();
-            // If you want to set different styles for different elements
-            // You can call 'obj.Elements' This will return an array of all elements
-            // Customize it like this
-            // obj.Elements[0].CursorBackgroundColor = "#562626";
-        &lt;/script&gt;
-    &lt;/body&gt;
-&lt;/html&gt;
+
         </code></pre>
         <a href="https://github.com/aswanthabam/TextFlowJS/">View More In GitHub</a>
         <br/>
@@ -94,43 +41,19 @@
         <!-- and it's easy to individually load additional languages -->
         <script>hljs.highlightAll();</script>
         
-         <!--script src="https://cdn.jsdelivr.net/gh/aswanthabam/TextFlowJS@main/textWrap.js" type="text/javascript" charset="utf-8">
-        </script-->
-        <script src="./textWrap.js" type="text/javascript" charset="utf-8"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
         <!-- and it's easy to individually load additional languages -->
         <script>hljs.highlightAll();</script>
 		<script>
+            // Wrap the first element 
 			obj1 = avcWrapOne(0);
-			obj1.textColor = "#ff0000";
-			obj1.cursorColor = "#121212";
-			obj1.cursorWidth = 7;
-			obj1.cursorVisible = true;
-			obj1.start(7000);
-			avcWrapOne(1).start(2000);
+            // Set styles
+			obj1.textColor = "#ff0000"; // Text Color
+			obj1.cursorColor = "#121212"; //Cursor COlor
+			obj1.cursorWidth = 7; //cursor width
+			obj1.cursorVisible = true; // if want the cursor to be visible or not
+			obj1.start(7000); // Start the animation and it would be completed in almost 7second (the time may warry because random is used)
+			avcWrapOne(1).start(2000); // start the animation for the second element (duration = 2seconds)
 		</script>
-        <!--script>
-            // creaing a new wrap
-            obj = new initWrap();
-            // Setting textSize
-            obj.wrapTextSize = 50;
-            // Setting font family
-            obj.wrapFontFamily = "Monospace";
-            // Setting textColor
-            obj.wrapTextColor = "#aed7d6";
-            obj.Elements[0].wrapTextSize = 20;
-            // Setting text direction
-            obj.dir = "ltr";
-            // Setting cursor blonk frequency
-            obj.blinkFrequency = 500;
-            // Setting Cursor background color
-            obj.CursorBackgroundColor = "#f6f6f7";
-            // Initializing element
-            obj.setWrap();
-            // If you want to set different styles for different elements
-            // You can call 'obj.Elements' This will return an array of all elements
-            // Customize it like this
-            // obj.Elements[0].CursorBackgroundColor = "#562626";
-        </script-->
     </body>
 </html>
